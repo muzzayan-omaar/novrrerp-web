@@ -1,5 +1,17 @@
 import Link from "next/link";
 import { DemoForm } from "@/components/DemoForm";
+import { ProblemIllustration } from "@/components/ProblemIllustration";
+
+const trustLogos = [
+  { name: "Pearl Retail" },
+  { name: "Nile Mart" },
+  { name: "Kira Traders" },
+  { name: "Victoria Wholesale" },
+  { name: "Kampala Hardware" },
+  { name: "EastEnd Pharmacy" },
+  { name: "Mukono Stores" },
+  { name: "Capital Fresh" },
+];
 
 const capabilities = [
   { id: "pos", title: "POS", desc: "Barcode, serials, split payments, offline-ready sales" },
@@ -15,16 +27,22 @@ const capabilities = [
 
 const painPoints = [
   {
+    stat: "3+",
+    statLabel: "tools in parallel",
     title: "Stock out of sync",
-    body: "Branches sell the same SKU while another is already out. Transfers and counts stay in chat and spreadsheets.",
+    body: "Branches sell the same SKU while another is already out. Transfers live in chat and spreadsheets.",
   },
   {
-    title: "Fiscal & month-end friction",
-    body: "Receipts, VAT, and EFRIS-style compliance fight with separate tools. Closing the books takes days.",
+    stat: "Days",
+    statLabel: "to close the month",
+    title: "Fiscal friction",
+    body: "Receipts, VAT, and EFRIS-style compliance fight separate apps. Month-end becomes a scramble.",
   },
   {
+    stat: "0",
+    statLabel: "single source of truth",
     title: "Scattered ops",
-    body: "POS, payroll, suppliers, and expenses live in different places. Owners lose the single view they need.",
+    body: "POS, payroll, suppliers, and expenses sit apart. Owners lose the view they need to decide.",
   },
 ];
 
@@ -107,7 +125,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <div className="mt-7 flex flex-col items-center sm:mt-8 mb-5">
+            <div className="mt-7 flex flex-col items-center sm:mt-8">
               <Link
                 href="/#start"
                 className="group inline-flex items-center gap-2 rounded-full bg-nova-gradient px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(37,99,235,0.55)] transition duration-200 hover:brightness-110 hover:shadow-[0_12px_28px_-6px_rgba(34,211,238,0.45)]"
@@ -169,37 +187,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. TRUST BAR */}
-      <section className="border-y border-slate-200 bg-slate-50">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-10 gap-y-4 px-4 py-6 sm:px-6 lg:px-8">
-          <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+      {/* 2. TRUST BAR — sample logos until real customers land */}
+      <section className="border-y border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">
             Trusted by growing Ugandan businesses
-          </span>
-          <span className="text-sm text-slate-500">Your customer logos go here</span>
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
+            {trustLogos.map((logo) => (
+              <span
+                key={logo.name}
+                className="font-brand text-[13px] tracking-[0.12em] text-slate-300 transition-colors hover:text-slate-500 sm:text-sm"
+                title="Sample — replace with real customer logo"
+              >
+                {logo.name}
+              </span>
+            ))}
+          </div>
+          <p className="mt-6 text-center text-[11px] text-slate-300">
+            Sample names for design — swap for real logos when ready
+          </p>
         </div>
       </section>
 
-      {/* 3. PROBLEM */}
-      <section className="bg-white py-20">
+      {/* 3. PROBLEM — custom illustration + open stats (no cards) */}
+      <section className="relative overflow-hidden bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-nova-900 sm:text-4xl">
-              Spreadsheets and separate apps cost you stock and time
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-nova-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              Spreadsheets and separate apps
+              <span className="mt-1 block font-medium text-slate-400">
+                cost you{" "}
+                <span className="text-nova-gradient font-semibold">stock and time</span>
+              </span>
             </h2>
-            <p className="mt-4 text-slate-600">
+            <p className="mx-auto mt-5 max-w-xl text-base text-slate-500 sm:text-lg">
               When POS, stock, payroll, and compliance live in different places, context breaks — and so does control.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {painPoints.map((p) => (
-              <div
-                key={p.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6"
-              >
-                <h3 className="text-lg font-semibold text-nova-900">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{p.body}</p>
-              </div>
-            ))}
+
+          {/* custom scene */}
+          <div className="relative mx-auto mt-12 max-w-4xl sm:mt-14">
+            <div
+              className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.08),transparent_65%)]"
+              aria-hidden
+            />
+            <ProblemIllustration />
+          </div>
+
+          {/* three points — open columns, dividers only, ClickUp-style */}
+          <div className="mx-auto mt-14 max-w-5xl sm:mt-16">
+            <div className="grid gap-10 sm:grid-cols-3 sm:gap-0">
+              {painPoints.map((p, i) => (
+                <div
+                  key={p.title}
+                  className={`text-center sm:px-8 ${
+                    i > 0 ? "sm:border-l sm:border-slate-200/80" : ""
+                  }`}
+                >
+                  <p className="text-3xl font-semibold tracking-tight text-nova-900 sm:text-4xl">
+                    {p.stat}
+                  </p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-nova-cyan">
+                    {p.statLabel}
+                  </p>
+                  <h3 className="mt-4 text-base font-semibold text-nova-900">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    {p.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
