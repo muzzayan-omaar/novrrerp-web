@@ -2,6 +2,7 @@ import Link from "next/link";
 import { DemoForm } from "@/components/DemoForm";
 import { ProblemIllustration } from "@/components/ProblemIllustration";
 import { CapabilityBento } from "@/components/CapabilityBento";
+import { HeroRotator } from "@/components/HeroRotator";
 
 const trustLogos = [
   { name: "Pearl Retail" },
@@ -127,7 +128,7 @@ export default function HomePage() {
         />
 
         {/* copy — no sub desc; tighter so product sits higher */}
-        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-[min(48vh,380px)] sm:px-6 sm:pt-16 sm:pb-[min(52vh,420px)] lg:px-8 lg:pt-20 lg:pb-[min(56vh,460px)] mb-5">
+        <div className="mb-5 relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-[min(48vh,380px)] sm:px-6 sm:pt-16 sm:pb-[min(52vh,420px)] lg:px-8 lg:pt-20 lg:pb-[min(56vh,460px)]">
           <div className="mx-auto max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-nova-950/[0.04] px-3.5 py-1.5 ring-1 ring-nova-blue/15">
               <span className="relative flex h-2 w-2">
@@ -135,17 +136,15 @@ export default function HomePage() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-nova-cyan" />
               </span>
               <span className="text-[13px] font-medium tracking-wide text-nova-900/80">
-                Built for Uganda
+                Built for your business
                 <span className="mx-1.5 text-nova-900/25">·</span>
                 <span className="text-nova-blue">multi-branch ready</span>
               </span>
             </div>
-
             <h1 className="mt-6 text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-nova-900 sm:mt-7 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
               One system
               <span className="mt-1 block font-medium text-slate-400 sm:mt-2">
-                to run{" "}
-                <span className="text-nova-gradient font-semibold">every store</span>
+                to run <HeroRotator />
               </span>
             </h1>
 
