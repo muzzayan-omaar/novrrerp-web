@@ -735,34 +735,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. COMPLIANCE / TRUST */}
-      <section id="compliance" className="bg-nova-950 py-20 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Built for Uganda
-            </h2>
-            <p className="mt-4 text-slate-300">
-              Local currency, VAT, fiscal-ready sales flows, and operational controls for real shops.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "EFRIS-style fiscal receipt support",
-              "18% VAT on quotes & sales",
-              "UGX-first operations",
-              "Multi-store roles & approvals",
-              "Audit trails",
-              "Daily backup jobs",
-            ].map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-xl border border-slate-700 bg-nova-900/50 px-4 py-3 text-sm"
+      {/* 9. BUILT FOR UGANDA — trust band, not a checklist grid */}
+      <section id="compliance" className="relative overflow-hidden bg-nova-950 text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_20%_0%,rgba(34,211,238,0.14),transparent_50%)]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-nova-blue/25 blur-[100px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+          <div className="grid gap-14 lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-20">
+            {/* left — statement */}
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-nova-cyan">
+                Local by design
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Built for Uganda
+                <span className="mt-1 block font-medium text-slate-400">
+                  not adapted later
+                </span>
+              </h2>
+              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-slate-400">
+                Currency, tax, fiscal-ready sales, and the controls multi-store teams
+                actually need — designed around how shops here operate.
+              </p>
+              <Link
+                href="/#start"
+                className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-nova-cyan transition hover:text-white"
               >
-                <span className="text-nova-cyan">✓</span>
-                {item}
-              </div>
-            ))}
+                Talk to us about your setup
+                <span className="transition group-hover:translate-x-0.5">→</span>
+              </Link>
+            </div>
+
+            {/* right — two columns of open trust points */}
+            <div className="grid gap-0 sm:grid-cols-2">
+              {[
+                {
+                  title: "EFRIS-style fiscal",
+                  body: "Receipt IDs and verify-ready flows when sales need them.",
+                },
+                {
+                  title: "18% VAT",
+                  body: "Quotes and sales with local tax handled in the same path.",
+                },
+                {
+                  title: "UGX-first",
+                  body: "Day-to-day ops in the currency your counters already use.",
+                },
+                {
+                  title: "Roles & approvals",
+                  body: "Multi-store access, voids, counts, and transfers with gates.",
+                },
+                {
+                  title: "Audit trails",
+                  body: "Who changed what — clear enough for owners and accountants.",
+                },
+                {
+                  title: "Backed up daily",
+                  body: "Operational data protected so a bad day doesn&apos;t erase the books.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={item.title}
+                  className={`border-t border-white/10 py-6 sm:px-5 ${
+                    i % 2 === 0 ? "sm:border-r sm:pr-8" : "sm:pl-8"
+                  } ${i < 2 ? "sm:pt-0" : ""}`}
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-nova-gradient" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-white">{item.title}</h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-slate-400">
+                        {item.body}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
