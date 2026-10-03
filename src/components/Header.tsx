@@ -444,17 +444,27 @@ export function Header() {
 
       {/* Full-width mega menu (ClickUp-style edge-to-edge) */}
       {menu === "product" && (
-        <div className="hidden lg:block" onMouseEnter={() => openMenu("product")}>
+        <div
+          className="absolute left-0 right-0 top-full hidden lg:block"
+          onMouseEnter={() => openMenu("product")}
+        >
           <MegaPanel columns={productColumns} onNavigate={closeNow} />
         </div>
       )}
       {menu === "solutions" && (
-        <div className="hidden lg:block" onMouseEnter={() => openMenu("solutions")}>
+        <div
+          className="absolute left-0 right-0 top-full hidden lg:block"
+          onMouseEnter={() => openMenu("solutions")}
+        >
           <MegaPanel columns={solutionColumns} onNavigate={closeNow} />
         </div>
       )}
+
       {menu === "resources" && (
-        <div className="hidden lg:block" onMouseEnter={() => openMenu("resources")}>
+        <div
+          className="absolute left-0 right-0 top-full hidden lg:block"
+          onMouseEnter={() => openMenu("resources")}
+        >
           <MegaPanel columns={resourceColumns} onNavigate={closeNow} />
         </div>
       )}
