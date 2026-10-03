@@ -639,15 +639,99 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. SOCIAL PROOF PLACEHOLDER */}
-      <section className="border-y border-slate-200 bg-slate-50 py-16">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-wider text-slate-400">
-            Customer stories
-          </p>
-          <p className="mt-3 text-slate-600">
-            Testimonials and logos will land here as early customers go live.
-          </p>
+      {/* 8. STORIES — featured quote + secondary lines (not 3 cards) */}
+      <section className="relative overflow-hidden bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-nova-cyan">
+                From the counter
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-nova-900 sm:text-4xl">
+                Operators, not decks
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-slate-500">
+              Sample voices for layout — swap in real customer quotes as you go live.
+            </p>
+          </div>
+
+          {/* featured */}
+          <figure className="relative mt-12 sm:mt-14">
+            <span
+              className="font-brand pointer-events-none absolute -left-1 -top-6 text-7xl leading-none text-nova-blue/15 sm:-top-8 sm:text-8xl"
+              aria-hidden
+            >
+              “
+            </span>
+            <blockquote className="relative max-w-3xl text-2xl font-medium leading-snug tracking-tight text-nova-900 sm:text-3xl sm:leading-[1.25]">
+              We stopped asking branch managers for stock counts on WhatsApp.
+              One screen shows what&apos;s on the shelf — and what&apos;s in transit.
+            </blockquote>
+            <figcaption className="mt-8 flex flex-wrap items-center gap-4">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-nova-gradient text-sm font-semibold text-white">
+                AN
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-nova-900">Amina N.</p>
+                <p className="text-xs text-slate-500">
+                  Owner · multi-branch retail · Kampala
+                </p>
+              </div>
+              <span className="hidden h-4 w-px bg-slate-200 sm:block" />
+              <p className="text-xs font-medium tracking-wide text-slate-400">
+                Pearl Retail
+              </p>
+            </figcaption>
+          </figure>
+
+          {/* secondary — open rows, not cards */}
+          <div className="mt-16 grid gap-0 border-t border-slate-200 sm:mt-20 sm:grid-cols-2">
+            {[
+              {
+                quote:
+                  "Month-end used to mean three spreadsheets and a late night. Payroll and expenses finally sit next to the sales we already recorded.",
+                name: "Joseph K.",
+                role: "Ops lead · hardware chain",
+                company: "Kampala Hardware",
+                initials: "JK",
+              },
+              {
+                quote:
+                  "Quotes go out with VAT the way we need them. When the customer pays, stock and the receipt trail move together — not in two apps.",
+                name: "Sarah M.",
+                role: "Manager · single shop",
+                company: "EastEnd Pharmacy",
+                initials: "SM",
+              },
+            ].map((item, i) => (
+              <figure
+                key={item.name}
+                className={`py-8 sm:py-10 ${
+                  i === 0
+                    ? "sm:border-r sm:border-slate-200 sm:pr-10"
+                    : "sm:pl-10"
+                }`}
+              >
+                <blockquote className="text-[15px] leading-relaxed text-slate-600">
+                  “{item.quote}”
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-nova-900">
+                    {item.initials}
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold text-nova-900">{item.name}</p>
+                    <p className="text-xs text-slate-500">
+                      {item.role}
+                      <span className="mx-1.5 text-slate-300">·</span>
+                      {item.company}
+                    </p>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
