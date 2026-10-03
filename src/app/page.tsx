@@ -574,32 +574,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. OUTCOMES */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-nova-900 sm:text-4xl">
-              Run every store from one screen
-            </h2>
-            <p className="mt-4 text-slate-600">
-              Outcomes you can measure once you&apos;re live. Numbers below are placeholders until your data is in.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { label: "Branches in sync", value: "Real-time" },
-              { label: "Fiscal-ready sales", value: "EFRIS-style" },
-              { label: "Month-end", value: "Faster close" },
-              { label: "Stack replaced", value: "One system" },
-            ].map((m) => (
-              <div
-                key={m.label}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
-              >
-                <p className="text-2xl font-bold text-nova-blue">{m.value}</p>
-                <p className="mt-1 text-sm text-slate-600">{m.label}</p>
-              </div>
-            ))}
+      {/* 7. OUTCOMES — big statement + open metrics (no stock cards) */}
+      <section className="relative overflow-hidden border-y border-slate-200 bg-slate-50/80 py-20 sm:py-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_100%_50%,rgba(37,99,235,0.06),transparent_50%)]"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-end gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-nova-cyan">
+                Outcomes
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-nova-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Run every store
+                <span className="mt-1 block font-medium text-slate-400">
+                  from{" "}
+                  <span className="text-nova-gradient font-semibold">one screen</span>
+                </span>
+              </h2>
+              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-slate-500">
+                Less tab-switching. Fewer stock surprises. A clearer path from sale to
+                month-end — built for how Ugandan shops already work.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:gap-x-12">
+              {[
+                {
+                  value: "1",
+                  unit: "system",
+                  label: "Instead of POS + Excel + chat + payroll apps",
+                },
+                {
+                  value: "N",
+                  unit: "branches",
+                  label: "Stock and roles stay aligned across locations",
+                },
+                {
+                  value: "18%",
+                  unit: "VAT",
+                  label: "Quotes and sales with local tax baked in",
+                },
+                {
+                  value: "EFRIS",
+                  unit: "ready",
+                  label: "Fiscal-style receipt flow when you need it",
+                },
+              ].map((m) => (
+                <div key={m.label} className="border-l border-slate-200 pl-5">
+                  <p className="flex items-baseline gap-1.5">
+                    <span className="text-3xl font-semibold tracking-tight text-nova-900 sm:text-4xl">
+                      {m.value}
+                    </span>
+                    <span className="text-sm font-medium text-nova-blue">{m.unit}</span>
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-500 sm:text-sm">
+                    {m.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
