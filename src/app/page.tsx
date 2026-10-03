@@ -822,29 +822,118 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10. FINAL CTA + FORM */}
-      <section id="start" className="bg-white py-20">
+      {/* 10. FINAL CTA — ClickUp-style card: CTA on top, snapshots under blur */}
+      <section id="start" className="relative overflow-hidden bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:items-start">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-nova-900 sm:text-4xl">
-                Start free. See NOVRR on your own data.
-              </h2>
-              <p className="mt-4 text-slate-600">
-                Tell us about your shops — we&apos;ll help you get set up. Package pricing is available on request.
+          {/* hero CTA card */}
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-nova-950 shadow-[0_40px_80px_-24px_rgba(15,27,51,0.45)] sm:rounded-[2rem]">
+            {/* brand ambient */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(34,211,238,0.18),transparent_55%)]"
+            />
+
+            {/* upper content — sits above the blur/snapshots */}
+            <div className="relative z-20 mx-auto max-w-2xl px-6 pb-10 pt-14 text-center sm:px-10 sm:pb-12 sm:pt-16 lg:pt-20">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-nova-cyan">
+                Get started
               </p>
-              <ul className="mt-6 space-y-2 text-sm text-slate-700">
-                <li className="flex gap-2"><span className="text-nova-cyan">→</span> POS, inventory, sales, finance, payroll</li>
-                <li className="flex gap-2"><span className="text-nova-cyan">→</span> Multi-store ready from day one</li>
-                <li className="flex gap-2"><span className="text-nova-cyan">→</span> Localized for Uganda</li>
-              </ul>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Start free.
+                <span className="mt-1 block font-medium text-slate-400">
+                  See NOVRR on{" "}
+                  <span className="text-nova-gradient font-semibold">your data</span>
+                </span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-slate-400 sm:text-[15px]">
+                One system for sell, stock, pay staff, and stay fiscal-ready.
+                Package pricing on request.
+              </p>
+              <div className="mt-8 flex flex-col items-center gap-3">
+                <a
+                  href="#start-form"
+                  className="group inline-flex items-center gap-2 rounded-full bg-nova-gradient px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_32px_-8px_rgba(34,211,238,0.45)] transition hover:brightness-110"
+                >
+                  Start free
+                  <span className="text-white/70 transition group-hover:translate-x-0.5 group-hover:text-white">
+                    →
+                  </span>
+                </a>
+                <p className="text-[12px] text-slate-500">
+                  No card required
+                  <span className="mx-1.5 text-slate-600">·</span>
+                  Setup help included
+                </p>
+              </div>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-              <DemoForm source="homepage" />
+
+            {/* upward blur so CTA stays crisp; stack fades out */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[55%] bg-gradient-to-b from-nova-950 via-nova-950/95 to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-t from-nova-950 via-nova-950/80 to-transparent sm:h-36"
+            />
+
+            {/* diagonal stack: bottom-left → top-right, then blur-out */}
+            <div className="relative z-0 h-[220px] sm:h-[280px] lg:h-[320px]">
+              <div className="absolute inset-0 overflow-hidden">
+                {[
+                  {
+                    src: "/snapshots/pos.png",
+                    alt: "POS",
+                    // bottom-left base of the stack
+                    className:
+                      "left-[4%] bottom-[-12%] w-[58%] sm:left-[8%] sm:w-[48%] -rotate-[6deg] z-[1]",
+                  },
+                  {
+                    src: "/snapshots/inventory.png",
+                    alt: "Inventory",
+                    className:
+                      "left-[22%] bottom-[-4%] w-[58%] sm:left-[28%] sm:w-[48%] -rotate-[2deg] z-[2]",
+                  },
+                  {
+                    src: "/snapshots/sales.png",
+                    alt: "Sales",
+                    className:
+                      "left-[40%] bottom-[6%] w-[58%] sm:left-[48%] sm:w-[48%] rotate-[3deg] z-[3]",
+                  },
+                  {
+                    src: "/snapshots/finance.png",
+                    alt: "Finance",
+                    className:
+                      "left-[58%] bottom-[16%] w-[58%] sm:left-[66%] sm:w-[46%] rotate-[7deg] z-[4]",
+                  },
+                ].map((shot) => (
+                  <div
+                    key={shot.alt}
+                    className={`absolute overflow-hidden rounded-xl border border-white/10 bg-nova-900 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.55)] ${shot.className}`}
+                  >
+                    <div className="flex items-center gap-1 border-b border-white/5 px-2.5 py-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+                      <span className="ml-1.5 text-[9px] text-white/25">{shot.alt}</span>
+                    </div>
+                    <div className="relative h-32 sm:h-40 lg:h-48">
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        className="absolute inset-0 h-full w-full object-cover object-top opacity-85"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+
+
         </div>
       </section>
+
     </>
   );
 }
