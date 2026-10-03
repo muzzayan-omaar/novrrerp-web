@@ -76,54 +76,93 @@ const solutions = [
 export default function HomePage() {
   return (
     <>
-      {/* 1. HERO */}
+      {/* 1. HERO — product peeps inside this band, not a block below */}
       <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
-              Built for Ugandan shops & multi-branch retail
-            </span>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-nova-900 sm:text-5xl lg:text-6xl">
-              One system to run your stores
+        {/* soft brand wash */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(ellipse_80%_55%_at_50%_-5%,rgba(34,211,238,0.14),rgba(37,99,235,0.07),transparent_70%)]"
+        />
+
+        {/* copy — no sub desc; tighter so product sits higher */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pt-12 pb-[min(48vh,380px)] sm:px-6 sm:pt-16 sm:pb-[min(52vh,420px)] lg:px-8 lg:pt-20 lg:pb-[min(56vh,460px)]">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-nova-950/[0.04] px-3.5 py-1.5 ring-1 ring-nova-blue/15">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-nova-cyan opacity-40" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-nova-cyan" />
+              </span>
+              <span className="text-[13px] font-medium tracking-wide text-nova-900/80">
+                Built for Uganda
+                <span className="mx-1.5 text-nova-900/25">·</span>
+                <span className="text-nova-blue">multi-branch ready</span>
+              </span>
+            </div>
+
+            <h1 className="mt-6 text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-nova-900 sm:mt-7 sm:text-5xl md:text-6xl lg:text-[4.25rem]">
+              One system
+              <span className="mt-1 block font-medium text-slate-400 sm:mt-2">
+                to run{" "}
+                <span className="text-nova-gradient font-semibold">every store</span>
+              </span>
             </h1>
-            <p className="mt-5 text-lg text-slate-600 sm:text-xl">
-              Sell, stock, pay staff, and stay EFRIS-ready — from one place. Localized for Uganda.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+            <div className="mt-7 flex flex-col items-center sm:mt-8 mb-5">
               <Link
                 href="/#start"
-                className="inline-flex rounded-full bg-nova-blue px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-nova-blue-dark transition-colors"
+                className="group inline-flex items-center gap-2 rounded-full bg-nova-gradient px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(37,99,235,0.55)] transition duration-200 hover:brightness-110 hover:shadow-[0_12px_28px_-6px_rgba(34,211,238,0.45)]"
               >
                 Start free
+                <span className="text-white/70 transition group-hover:translate-x-0.5 group-hover:text-white">
+                  →
+                </span>
               </Link>
-              <Link
-                href="/#product"
-                className="inline-flex rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
-              >
-                See the product
-              </Link>
+              <p className="mt-3 text-[13px] text-slate-400">
+                No card required
+                <span className="mx-1.5 text-slate-300">·</span>
+                Pricing on request
+              </p>
             </div>
-            <p className="mt-3 text-xs text-slate-500">Get started free. Contact us for package pricing.</p>
           </div>
+        </div>
 
-          {/* Product UI placeholder — replace with real screenshot / recording */}
-          <div className="mx-auto mt-12 max-w-5xl">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-nova-950 shadow-2xl shadow-nova-900/20">
-              <div className="flex items-center gap-2 border-b border-slate-700/50 px-4 py-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
-                <span className="ml-3 text-xs text-slate-400">NOVRR · POS & inventory</span>
+        {/* product UI pulled up into the hero band */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0">
+          <div className="pointer-events-auto relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div
+              className="absolute -inset-x-10 -top-10 bottom-0 bg-nova-gradient opacity-[0.12] blur-3xl"
+              aria-hidden
+            />
+            <div className="relative h-[min(48vh,380px)] overflow-hidden rounded-t-2xl border border-b-0 border-slate-200/80 bg-nova-950 shadow-[0_-12px_48px_-8px_rgba(15,27,51,0.35)] sm:h-[min(52vh,420px)] lg:h-[min(56vh,460px)]">
+              <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+                <span className="ml-3 font-brand text-[10px] tracking-wider text-white/40">
+                  NOVRR <span className="text-nova-cyan/70">ERP</span>
+                </span>
               </div>
-              <div className="flex min-h-[280px] items-center justify-center bg-gradient-to-br from-nova-900 to-nova-950 p-8 sm:min-h-[360px]">
-                <div className="text-center">
-                  <p className="text-sm font-medium text-nova-cyan">Product snapshot</p>
-                  <p className="mt-2 max-w-md text-sm text-slate-400">
-                    Drop your real POS / dashboard screenshot or short recording here
-                    <br />
-                    <span className="text-xs">(public/hero.png or video)</span>
-                  </p>
-                </div>
+              {/* Media: /public/hero.png + /public/hero.mp4 (or hero.webm) */}
+              <div className="relative h-[480px] w-full bg-nova-950">
+                {/* Image always available as base / fallback */}
+                <img
+                  src="/hero.png"
+                  alt="NOVRR ERP — POS and inventory"
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+                {/* Short loop on top when the file exists */}
+                <video
+                  className="absolute inset-0 z-[1] h-full w-full object-cover object-top"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  poster="/hero.png"
+                  aria-label="NOVRR ERP product preview"
+                >
+                  <source src="/hero.webm" type="video/webm" />
+                  <source src="/hero.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

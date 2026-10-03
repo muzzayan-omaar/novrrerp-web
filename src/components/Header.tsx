@@ -240,23 +240,20 @@ function MegaPanel({
   const colCount = columns.length;
   const gridClass =
     colCount >= 4
-      ? "grid-cols-4"
+      ? "lg:grid-cols-4"
       : colCount === 3
-        ? "grid-cols-3"
+        ? "lg:grid-cols-3"
         : colCount === 2
-          ? "grid-cols-2"
-          : "grid-cols-1";
+          ? "lg:grid-cols-2"
+          : "lg:grid-cols-1";
 
   return (
-    <div className="absolute left-1/2 top-full z-50 w-[min(100vw-2rem,52rem)] -translate-x-1/2 pt-3">
-      <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_50px_-12px_rgba(15,27,51,0.18)] ring-1 ring-black/5">
-        <div className={`grid gap-0 ${gridClass}`}>
-          {columns.map((col, i) => (
-            <div
-              key={col.heading}
-              className={`p-5 ${i > 0 ? "border-l border-slate-100" : ""}`}
-            >
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-400">
+    <div className="w-full border-t border-slate-200 bg-white shadow-[0_24px_48px_-12px_rgba(15,27,51,0.12)]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className={`grid grid-cols-1 gap-2 py-8 sm:grid-cols-2 ${gridClass}`}>
+          {columns.map((col) => (
+            <div key={col.heading} className="min-w-0 px-2">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-400">
                 {col.heading}
               </p>
               <ul className="space-y-1">
@@ -283,7 +280,7 @@ function MegaPanel({
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/80 px-5 py-3">
+        <div className="flex items-center justify-between border-t border-slate-100 py-3.5">
           <p className="text-xs text-slate-500">
             One system for sell · stock · pay · compliance
           </p>
@@ -335,6 +332,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [menu, setMenu] = useState<MenuKey>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const navRef = useRef<HTMLElement>(null);
 
   function openMenu(key: MenuKey) {
@@ -357,7 +355,7 @@ export function Header() {
       if (e.key === "Escape") closeNow();
     }
     function onClick(e: MouseEvent) {
-      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         closeNow();
       }
     }
@@ -370,7 +368,11 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md"
+      onMouseLeave={scheduleClose}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         {/* Logo + wordmark */}
         <Link href="/" className="flex items-center shrink-0">
@@ -381,38 +383,18 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav
-          ref={navRef}
-          className="relative hidden items-center gap-0.5 lg:flex"
-          onMouseLeave={scheduleClose}
-        >
-          <div className="relative" onMouseEnter={() => openMenu("product")}>
-            <NavTrigger
-              label="Product"
-              active={menu === "product"}
-              onOpen={() => openMenu("product")}
-            />
-            {menu === "product" && (
-              <div onMouseEnter={() => openMenu("product")}>
-                <MegaPanel columns={productColumns} onNavigate={closeNow} />
-              </div>
-            )}
-          </div>
-
-          <div className="relative" onMouseEnter={() => openMenu("solutions")}>
-            <NavTrigger
-              label="Solutions"
-              active={menu === "solutions"}
-              onOpen={() => openMenu("solutions")}
-            />
-            {menu === "solutions" && (
-              <div onMouseEnter={() => openMenu("solutions")}>
-                <MegaPanel columns={solutionColumns} onNavigate={closeNow} />
-              </div>
-            )}
-          </div>
-
+        {/* Desktop nav — triggers only; panel is full-width below */}
+        <nav ref={navRef} className="hidden items-center gap-0.5 lg:flex">
+          <NavTrigger
+            label="Product"
+            active={menu === "product"}
+            onOpen={() => openMenu("product")}
+          />
+          <NavTrigger
+            label="Solutions"
+            active={menu === "solutions"}
+            onOpen={() => openMenu("solutions")}
+          />
           <Link
             href="/pricing"
             className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-nova-900"
@@ -420,19 +402,11 @@ export function Header() {
           >
             Pricing
           </Link>
-
-          <div className="relative" onMouseEnter={() => openMenu("resources")}>
-            <NavTrigger
-              label="Resources"
-              active={menu === "resources"}
-              onOpen={() => openMenu("resources")}
-            />
-            {menu === "resources" && (
-              <div onMouseEnter={() => openMenu("resources")}>
-                <MegaPanel columns={resourceColumns} onNavigate={closeNow} />
-              </div>
-            )}
-          </div>
+          <NavTrigger
+            label="Resources"
+            active={menu === "resources"}
+            onOpen={() => openMenu("resources")}
+          />
         </nav>
 
         {/* Desktop CTAs */}
@@ -467,6 +441,23 @@ export function Header() {
           </svg>
         </button>
       </div>
+
+      {/* Full-width mega menu (ClickUp-style edge-to-edge) */}
+      {menu === "product" && (
+        <div className="hidden lg:block" onMouseEnter={() => openMenu("product")}>
+          <MegaPanel columns={productColumns} onNavigate={closeNow} />
+        </div>
+      )}
+      {menu === "solutions" && (
+        <div className="hidden lg:block" onMouseEnter={() => openMenu("solutions")}>
+          <MegaPanel columns={solutionColumns} onNavigate={closeNow} />
+        </div>
+      )}
+      {menu === "resources" && (
+        <div className="hidden lg:block" onMouseEnter={() => openMenu("resources")}>
+          <MegaPanel columns={resourceColumns} onNavigate={closeNow} />
+        </div>
+      )}
 
       {/* Mobile drawer */}
       {mobileOpen && (
