@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DemoForm } from "@/components/DemoForm";
 import { ProblemIllustration } from "@/components/ProblemIllustration";
+import { CapabilityBento } from "@/components/CapabilityBento";
 
 const trustLogos = [
   { name: "Pearl Retail" },
@@ -11,18 +12,6 @@ const trustLogos = [
   { name: "EastEnd Pharmacy" },
   { name: "Mukono Stores" },
   { name: "Capital Fresh" },
-];
-
-const capabilities = [
-  { id: "pos", title: "POS", desc: "Barcode, serials, split payments, offline-ready sales" },
-  { id: "inventory", title: "Multi-store inventory", desc: "Stock transit, counts with approval, multi-UOM" },
-  { id: "sales", title: "Quotes & sales", desc: "Proforma → sale, VAT, fiscal receipts" },
-  { id: "compliance", title: "EFRIS-ready", desc: "Fiscal receipt IDs & QR-style verify links" },
-  { id: "suppliers", title: "Suppliers & POs", desc: "Purchase orders and reliability scoring" },
-  { id: "finance", title: "Expenses & bank", desc: "CapEx/OpEx, payments, bank reconciliation" },
-  { id: "payroll", title: "Payroll", desc: "Staff, tax engine, work status & leave" },
-  { id: "team", title: "Staff & roles", desc: "Multi-store access, approval workflows" },
-  { id: "reports", title: "Reports", desc: "Sales, stock, and operational analytics" },
 ];
 
 const painPoints = [
@@ -264,28 +253,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. CAPABILITY BENTO */}
-      <section id="product" className="bg-slate-50 py-20">
+      {/* 4. CAPABILITY BENTO — large center tiles + side ring */}
+      <section id="product" className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-nova-900 sm:text-4xl">
-              Everything your business needs — in NOVRR
+            <h2 className="text-3xl font-semibold tracking-tight text-nova-900 sm:text-4xl lg:text-[2.75rem]">
+              Everything your business needs
+              <span className="mt-1 block font-medium text-slate-400">
+                in <span className="text-nova-gradient font-semibold">NOVRR</span>
+              </span>
             </h2>
-            <p className="mt-4 text-slate-600">
-              One platform: counter sales, multi-store stock, finance, payroll, and compliance.
+            <p className="mt-4 text-slate-500">
+              Counter sales, multi-store stock, finance, payroll, and compliance — one system.
             </p>
           </div>
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((c) => (
-              <a
-                key={c.id}
-                href={`#${c.id}`}
-                className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-nova-blue/40 hover:shadow-md"
-              >
-                <h3 className="font-semibold text-nova-900 group-hover:text-nova-blue">{c.title}</h3>
-                <p className="mt-1 text-sm text-slate-600">{c.desc}</p>
-              </a>
-            ))}
+          <div className="mt-12 sm:mt-14">
+            <CapabilityBento />
           </div>
         </div>
       </section>
