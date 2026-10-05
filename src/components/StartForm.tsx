@@ -1,3 +1,4 @@
+"use client";
 import { FormEvent, useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";

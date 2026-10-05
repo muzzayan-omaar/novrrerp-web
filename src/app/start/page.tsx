@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { StartForm } from "@/components/StartForm";
+import { StartIllustration } from "@/components/StartIllustration";
 
 export const metadata: Metadata = {
   title: "Start free",
@@ -11,14 +11,12 @@ export const metadata: Metadata = {
 export default function StartPage() {
   return (
     <div className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-white">
-      {/* brand wash */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(ellipse_80%_55%_at_50%_-10%,rgba(34,211,238,0.12),rgba(37,99,235,0.06),transparent_70%)]"
       />
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-20">
-        {/* left — copy */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-nova-cyan">
             Start free
@@ -51,7 +49,11 @@ export default function StartPage() {
             ))}
           </ul>
 
-          <p className="mt-10 text-xs text-slate-400">
+          <div className="mt-10 hidden sm:block">
+            <StartIllustration />
+          </div>
+
+          <p className="mt-8 text-xs text-slate-400 sm:mt-6">
             Already have an account?{" "}
             <a
               href={process.env.NEXT_PUBLIC_APP_URL || "#"}
@@ -62,7 +64,6 @@ export default function StartPage() {
           </p>
         </div>
 
-        {/* right — short form + snapshot */}
         <div className="relative">
           <div
             aria-hidden
@@ -82,7 +83,6 @@ export default function StartPage() {
             </div>
           </div>
 
-          {/* quiet secondary */}
           <p className="relative mt-6 text-center text-xs text-slate-400">
             Prefer chat?{" "}
             <a
@@ -93,14 +93,10 @@ export default function StartPage() {
             >
               Message us on WhatsApp
             </a>
-            <span className="mt-1 block text-[11px] text-slate-300">
-              Replace the number in the link with your real WhatsApp Business line
-            </span>
           </p>
         </div>
       </div>
 
-      {/* bottom product peep */}
       <div className="relative mx-auto max-w-5xl px-4 pb-0 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-t-2xl border border-b-0 border-slate-200/80 bg-nova-950 shadow-[0_-12px_40px_-12px_rgba(15,27,51,0.25)]">
           <div className="flex items-center gap-2 border-b border-white/5 px-4 py-2.5">
@@ -115,11 +111,7 @@ export default function StartPage() {
             <img
               src="/snapshots/pos.png"
               alt="NOVRR POS"
-              className="absolute inset-0 h-full w-full object-cover object-top opacity-90"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-nova-950 to-transparent"
+              className="absolute inset-0 h-full w-full object-cover object-top"
             />
           </div>
         </div>
