@@ -171,32 +171,32 @@ const productColumns: MenuColumn[] = [
   {
     heading: "Sell",
     items: [
-      { href: "/#pos", label: "Point of Sale", desc: "Barcode, serials, offline sales", icon: Icons.pos, tone: "blue" },
-      { href: "/#sales", label: "Quotes & Sales", desc: "Proforma → cash with VAT", icon: Icons.sales, tone: "cyan" },
-      { href: "/#sales", label: "Customers", desc: "Credit limits & history", icon: Icons.customers, tone: "slate" },
+      { href: "/product/pos", label: "Point of Sale", desc: "Barcode, serials, offline sales", icon: Icons.pos, tone: "blue" },
+      { href: "/product/sales", label: "Quotes & Sales", desc: "Proforma → cash with VAT", icon: Icons.sales, tone: "cyan" },
+      { href: "/product/sales", label: "Customers", desc: "Credit limits & history", icon: Icons.customers, tone: "slate" },
     ],
   },
   {
     heading: "Stock",
     items: [
-      { href: "/#inventory", label: "Multi-store inventory", desc: "Transit, multi-UOM, serials", icon: Icons.inventory, tone: "emerald" },
-      { href: "/#inventory", label: "Stock counts", desc: "Counts with approval gate", icon: Icons.stockCount, tone: "amber" },
-      { href: "/#inventory", label: "Suppliers & POs", desc: "Orders & reliability", icon: Icons.suppliers, tone: "violet" },
+      { href: "/product/inventory", label: "Multi-store inventory", desc: "Transit, multi-UOM, serials", icon: Icons.inventory, tone: "emerald" },
+      { href: "/product/inventory", label: "Stock counts", desc: "Counts with approval gate", icon: Icons.stockCount, tone: "amber" },
+      { href: "/product/inventory", label: "Suppliers & POs", desc: "Orders & reliability", icon: Icons.suppliers, tone: "violet" },
     ],
   },
   {
     heading: "Money & people",
     items: [
-      { href: "/#finance", label: "Expenses & bank", desc: "CapEx/OpEx, reconciliation", icon: Icons.expenses, tone: "blue" },
-      { href: "/#finance", label: "Payroll", desc: "Staff pay & tax engine", icon: Icons.payroll, tone: "cyan" },
-      { href: "/#finance", label: "Staff & roles", desc: "Access across stores", icon: Icons.staff, tone: "slate" },
+      { href: "/product/finance", label: "Expenses & bank", desc: "CapEx/OpEx, reconciliation", icon: Icons.expenses, tone: "blue" },
+      { href: "/product/finance", label: "Payroll", desc: "Staff pay & tax engine", icon: Icons.payroll, tone: "cyan" },
+      { href: "/product/finance", label: "Staff & roles", desc: "Access across stores", icon: Icons.staff, tone: "slate" },
     ],
   },
   {
     heading: "Control",
     items: [
       { href: "/#compliance", label: "EFRIS & compliance", desc: "Fiscal-ready receipts", icon: Icons.efris, tone: "emerald" },
-      { href: "/#product", label: "Reports", desc: "Sales, stock, ops analytics", icon: Icons.reports, tone: "amber" },
+      { href: "/product", label: "Reports", desc: "Sales, stock, ops analytics", icon: Icons.reports, tone: "amber" },
     ],
   },
 ];
@@ -205,9 +205,9 @@ const solutionColumns: MenuColumn[] = [
   {
     heading: "By business type",
     items: [
-      { href: "/#solutions", label: "Single shop", desc: "One counter, clear stock", icon: Icons.shop, tone: "blue" },
-      { href: "/#solutions", label: "Multi-branch retail", desc: "Transfers & shared catalog", icon: Icons.branches, tone: "cyan" },
-      { href: "/#solutions", label: "Growing franchise", desc: "Packages & governance", icon: Icons.franchise, tone: "violet" },
+      { href: "/solutions#single", label: "Single shop", desc: "One counter, clear stock", icon: Icons.shop, tone: "blue" },
+      { href: "/solutions#multi", label: "Multi-branch retail", desc: "Transfers & shared catalog", icon: Icons.branches, tone: "cyan" },
+      { href: "/solutions#franchise", label: "Growing franchise", desc: "Packages & governance", icon: Icons.franchise, tone: "violet" },
     ],
   },
 ];
@@ -217,13 +217,13 @@ const resourceColumns: MenuColumn[] = [
     heading: "Learn",
     items: [
       { href: "/#compliance", label: "Uganda & EFRIS", desc: "Local compliance overview", icon: Icons.efris, tone: "emerald" },
-      { href: "/#product", label: "Product tour", desc: "See modules at a glance", icon: Icons.guide, tone: "blue" },
+      { href: "/product", label: "Product tour", desc: "See modules at a glance", icon: Icons.guide, tone: "blue" },
     ],
   },
   {
     heading: "Company",
     items: [
-      { href: "/#start", label: "Contact / demo", desc: "Talk to the team", icon: Icons.support, tone: "cyan" },
+      { href: "/start", label: "Contact / demo", desc: "Talk to the team", icon: Icons.support, tone: "cyan" },
       { href: "/privacy", label: "Privacy", desc: "How we handle data", icon: Icons.guide, tone: "slate" },
       { href: "/terms", label: "Terms", desc: "Service terms", icon: Icons.guide, tone: "slate" },
     ],
@@ -418,7 +418,7 @@ export function Header() {
             Login
           </a>
           <Link
-            href="/#start"
+            href="/start"
             className="rounded-full bg-nova-blue px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-nova-blue-dark"
           >
             Start free
@@ -534,7 +534,7 @@ export function Header() {
                 Login
               </a>
               <Link
-                href="/#start"
+                href="/start"
                 onClick={() => setMobileOpen(false)}
                 className="rounded-full bg-nova-blue px-3 py-2.5 text-center text-sm font-semibold text-white"
               >
