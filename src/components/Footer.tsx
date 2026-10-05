@@ -49,7 +49,7 @@ export function Footer() {
             <span className="text-slate-200">sell · stock · pay · compliance</span>
           </p>
           <Link
-            href="/#start"
+            href="/start"
             className="inline-flex items-center gap-2 self-start rounded-full bg-nova-gradient px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:self-auto"
           >
             Start free

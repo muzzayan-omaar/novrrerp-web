@@ -150,7 +150,7 @@ export default function HomePage() {
 
             <div className="mt-7 flex flex-col items-center sm:mt-8">
               <Link
-                href="/#start"
+                href="/start"
                 className="group inline-flex items-center gap-2 rounded-full bg-nova-gradient px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(37,99,235,0.55)] transition duration-200 hover:brightness-110 hover:shadow-[0_12px_28px_-6px_rgba(34,211,238,0.45)]"
               >
                 Start free
@@ -763,7 +763,7 @@ export default function HomePage() {
                 actually need — designed around how shops here operate.
               </p>
               <Link
-                href="/#start"
+                href="/start"
                 className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-nova-cyan transition hover:text-white"
               >
                 Talk to us about your setup
@@ -850,7 +850,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 flex flex-col items-center gap-3">
                 <a
-                  href="#start-form"
+                  href="/start"
                   className="group inline-flex items-center gap-2 rounded-full bg-nova-gradient px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_12px_32px_-8px_rgba(34,211,238,0.45)] transition hover:brightness-110"
                 >
                   Start free

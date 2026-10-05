@@ -285,7 +285,7 @@ function MegaPanel({
             One system for sell · stock · pay · compliance
           </p>
           <Link
-            href="/#start"
+            href="/start"
             onClick={onNavigate}
             className="text-xs font-semibold text-nova-blue hover:text-nova-blue-dark"
           >
