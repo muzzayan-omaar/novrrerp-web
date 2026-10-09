@@ -18,7 +18,10 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://novrrerp.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "NOVRR ERP — One system to run your stores",
     template: "%s | NOVRR ERP",
@@ -33,17 +36,48 @@ export const metadata: Metadata = {
     "NOVRR",
     "accounting software Uganda",
   ],
+  authors: [{ name: "NOVRR" }],
+  creator: "NOVRR",
   openGraph: {
+    type: "website",
+    locale: "en_UG",
+    url: siteUrl,
+    siteName: "NOVRR ERP",
     title: "NOVRR ERP — One system to run your stores",
     description:
       "Sell, stock, pay staff, and stay EFRIS-ready from one platform built for Uganda.",
-    type: "website",
-    locale: "en_UG",
-    siteName: "NOVRR ERP",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "NOVRR ERP",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "NOVRR ERP — One system to run your stores",
+    description:
+      "Sell, stock, pay staff, and stay EFRIS-ready from one platform built for Uganda.",
+    images: ["/og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
   icons: {
     icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 

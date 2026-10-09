@@ -4,6 +4,28 @@ import { ProblemIllustration } from "@/components/ProblemIllustration";
 import { CapabilityBento } from "@/components/CapabilityBento";
 import { HeroRotator } from "@/components/HeroRotator";
 
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "NOVRR ERP",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "UGX",
+        description: "Start free — package pricing on request",
+      },
+      description:
+        "Retail ERP for Uganda: POS, inventory, sales, finance, payroll, EFRIS-style compliance.",
+      url: "https://novrrerp.com",
+    }),
+  }}
+/>
+
 const trustLogos = [
   { name: "Pearl Retail" },
   { name: "Nile Mart" },

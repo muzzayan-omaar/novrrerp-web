@@ -1,33 +1,33 @@
 import Link from "next/link";
 
 const product = [
-  { href: "/#pos", label: "Point of Sale" },
-  { href: "/#inventory", label: "Multi-store inventory" },
-  { href: "/#sales", label: "Quotes & sales" },
-  { href: "/#finance", label: "Expenses & bank" },
-  { href: "/#finance", label: "Payroll" },
-  { href: "/#compliance", label: "EFRIS & VAT" },
-  { href: "/#product", label: "Suppliers & POs" },
-  { href: "/#product", label: "Reports" },
-  { href: "/#product", label: "Staff & roles" },
+  { href: "/product/pos", label: "Point of Sale" },
+  { href: "/product/inventory", label: "Multi-store inventory" },
+  { href: "/product/sales", label: "Quotes & sales" },
+  { href: "/product/finance", label: "Expenses & bank" },
+  { href: "/product/finance", label: "Payroll" },
+  { href: "/compliance", label: "EFRIS & VAT" },
+  { href: "/product/inventory", label: "Suppliers & POs" },
+  { href: "/product", label: "Reports" },
+  { href: "/product/finance", label: "Staff & roles" },
 ];
 
 const solutions = [
-  { href: "/#solution-single", label: "Single shop" },
-  { href: "/#solution-multi", label: "Multi-branch retail" },
-  { href: "/#solution-franchise", label: "Growing franchise" },
-  { href: "/#solutions", label: "Compare setups" },
+  { href: "/solutions#single", label: "Single shop" },
+  { href: "/solutions#multi", label: "Multi-branch retail" },
+  { href: "/solutions#franchise", label: "Growing franchise" },
+  { href: "/solutions", label: "Compare setups" },
 ];
 
 const resources = [
-  { href: "/#product", label: "Product overview" },
+  { href: "/product", label: "Product overview" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/#start", label: "Get started" },
-  { href: "/#compliance", label: "Built for Uganda" },
+  { href: "/start", label: "Get started" },
+  { href: "/compliance", label: "Built for Uganda" },
 ];
 
 const company = [
-  { href: "/#start", label: "Contact" },
+  { href: "/start", label: "Contact" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
 ];

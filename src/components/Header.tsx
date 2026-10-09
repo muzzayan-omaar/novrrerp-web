@@ -195,7 +195,7 @@ const productColumns: MenuColumn[] = [
   {
     heading: "Control",
     items: [
-      { href: "/#compliance", label: "EFRIS & compliance", desc: "Fiscal-ready receipts", icon: Icons.efris, tone: "emerald" },
+      { href: "/compliance", label: "EFRIS & compliance", desc: "Fiscal-ready receipts", icon: Icons.efris, tone: "emerald" },
       { href: "/product", label: "Reports", desc: "Sales, stock, ops analytics", icon: Icons.reports, tone: "amber" },
     ],
   },
@@ -216,7 +216,7 @@ const resourceColumns: MenuColumn[] = [
   {
     heading: "Learn",
     items: [
-      { href: "/#compliance", label: "Uganda & EFRIS", desc: "Local compliance overview", icon: Icons.efris, tone: "emerald" },
+      { href: "/compliance", label: "Uganda & EFRIS", desc: "Local compliance overview", icon: Icons.efris, tone: "emerald" },
       { href: "/product", label: "Product tour", desc: "See modules at a glance", icon: Icons.guide, tone: "blue" },
     ],
   },
