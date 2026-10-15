@@ -181,9 +181,7 @@ export default function HomePage() {
                 </span>
               </Link>
               <p className="mt-3 text-[13px] text-slate-400">
-                No card required
-                <span className="mx-1.5 text-slate-300">·</span>
-                Pricing on request
+                Request a free trial today!
               </p>
             </div>
           </div>
