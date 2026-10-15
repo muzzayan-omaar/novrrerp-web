@@ -216,7 +216,7 @@ const resourceColumns: MenuColumn[] = [
   {
     heading: "Learn",
     items: [
-      { href: "/contact", label: "Contact", desc: "Talk to the team", icon: Icons.support, tone: "cyan" },
+      
       { href: "/compliance", label: "Uganda & EFRIS", desc: "Local compliance overview", icon: Icons.efris, tone: "emerald" },
       { href: "/product", label: "Product tour", desc: "See modules at a glance", icon: Icons.guide, tone: "blue" },
     ],
@@ -224,7 +224,7 @@ const resourceColumns: MenuColumn[] = [
   {
     heading: "Company",
     items: [
-      { href: "/start", label: "Contact / demo", desc: "Talk to the team", icon: Icons.support, tone: "cyan" },
+      { href: "/contact", label: "Contact / demo", desc: "Talk to the team", icon: Icons.support, tone: "cyan" },
       { href: "/privacy", label: "Privacy", desc: "How we handle data", icon: Icons.guide, tone: "slate" },
       { href: "/terms", label: "Terms", desc: "Service terms", icon: Icons.guide, tone: "slate" },
     ],
