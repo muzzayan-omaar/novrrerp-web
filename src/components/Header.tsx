@@ -289,7 +289,7 @@ function MegaPanel({
             onClick={onNavigate}
             className="text-xs font-semibold text-nova-blue hover:text-nova-blue-dark"
           >
-            Start free →
+            Get NOVRR now →
           </Link>
         </div>
       </div>
