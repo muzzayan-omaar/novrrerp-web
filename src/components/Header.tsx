@@ -216,6 +216,7 @@ const resourceColumns: MenuColumn[] = [
   {
     heading: "Learn",
     items: [
+      { href: "/contact", label: "Contact", desc: "Talk to the team", icon: Icons.support, tone: "cyan" },
       { href: "/compliance", label: "Uganda & EFRIS", desc: "Local compliance overview", icon: Icons.efris, tone: "emerald" },
       { href: "/product", label: "Product tour", desc: "See modules at a glance", icon: Icons.guide, tone: "blue" },
     ],

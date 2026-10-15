@@ -27,7 +27,7 @@ const resources = [
 ];
 
 const company = [
-  { href: "/start", label: "Contact" },
+  { href: "/contact", label: "Contact" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
 ];
