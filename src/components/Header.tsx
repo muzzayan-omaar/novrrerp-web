@@ -289,7 +289,7 @@ function MegaPanel({
             onClick={onNavigate}
             className="text-xs font-semibold text-nova-blue hover:text-nova-blue-dark"
           >
-            Get NOVRR now →
+            Get my free trial →
           </Link>
         </div>
       </div>
@@ -421,7 +421,7 @@ export function Header() {
             href="/start"
             className="rounded-full bg-nova-blue px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-nova-blue-dark"
           >
-            Get NOVRR now
+            Get my free trial
           </Link>
         </div>
 
@@ -538,7 +538,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="rounded-full bg-nova-blue px-3 py-2.5 text-center text-sm font-semibold text-white"
               >
-                Get NOVRR now
+                Get my free trial
               </Link>
             </div>
           </div>

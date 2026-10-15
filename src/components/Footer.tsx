@@ -52,7 +52,7 @@ export function Footer() {
             href="/start"
             className="inline-flex items-center gap-2 self-start rounded-full bg-nova-gradient px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110 sm:self-auto"
           >
-            Get NOVRR now
+            Get my free trial
             <span aria-hidden>→</span>
           </Link>
         </div>
