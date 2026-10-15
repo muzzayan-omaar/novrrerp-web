@@ -45,7 +45,7 @@ export default function ContactPage() {
               Sales, onboarding, or product questions — pick WhatsApp for speed,
               or send a short message. Ready to run stores?{" "}
               <Link href="/start" className="font-semibold text-nova-blue hover:underline">
-                Start free
+                Start your free trial
               </Link>
               .
             </p>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 href="/start"
                 className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-nova-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-nova-900"
               >
-                Start free
+                Start your free trial
                 <span aria-hidden>→</span>
               </Link>
             </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
               We route sales and support from the same inbox. For the full
               workspace setup flow, use{" "}
               <Link href="/start" className="font-semibold text-nova-blue hover:underline">
-                Start free
+                Start your free trial
               </Link>
               .
             </p>
