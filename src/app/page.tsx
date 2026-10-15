@@ -175,7 +175,7 @@ export default function HomePage() {
                 href="/start"
                 className="group inline-flex items-center gap-2 rounded-full bg-nova-gradient px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_24px_-6px_rgba(37,99,235,0.55)] transition duration-200 hover:brightness-110 hover:shadow-[0_12px_28px_-6px_rgba(34,211,238,0.45)]"
               >
-                Try NOVRR on your own products and stock
+                Try NOVRR with the free trial now
                 <span className="text-white/70 transition group-hover:translate-x-0.5 group-hover:text-white">
                   →
                 </span>
