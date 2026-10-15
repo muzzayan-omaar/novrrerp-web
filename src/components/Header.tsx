@@ -538,7 +538,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="rounded-full bg-nova-blue px-3 py-2.5 text-center text-sm font-semibold text-white"
               >
-                Start free
+                Get NOVRR now
               </Link>
             </div>
           </div>
