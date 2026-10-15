@@ -421,7 +421,7 @@ export function Header() {
             href="/start"
             className="rounded-full bg-nova-blue px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-nova-blue-dark"
           >
-            Start free
+            Get NOVRR now
           </Link>
         </div>
 
